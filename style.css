@@ -109,6 +109,14 @@ main h2:hover{
     display: none;
 }
 
+.page .cards-pai div:nth-child(6) {
+    display: none;
+}
+
+.page .cards-pai div:nth-child(5) {
+    display: none;
+}
+
 @keyframes topdown {
     0%  {
         opacity: 0;
@@ -142,6 +150,14 @@ main h2:hover{
         grid-template-areas: "header main";
         
         
+    }
+
+    .page .cards-pai div:nth-child(6) {
+        display: block;
+    }
+    
+    .page .cards-pai div:nth-child(5) {
+        display: block;
     }
 
     header{
