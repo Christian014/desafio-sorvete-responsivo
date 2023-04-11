@@ -13,7 +13,6 @@ body{
 }
 
 header {
-    height: 27.9rem;
     background: #8E9AAF;
     margin: 0 auto;
     align-items: center;
@@ -29,11 +28,12 @@ header img{
 
 header h1{
     font-family: 'Staatliches';
-    font-size: 4.0rem;
+    font-size:clamp(3.0rem, 2vw, 4.0rem);
     line-height: 3.4rem;
+    font-size: 4.0rem;
     color: #FFFFFF;
     width: 100%;
-    padding: 0.8rem 8.7rem;
+    padding: 20px 0;
     background-color: hsla(275, 18%, 79%, 1);
     margin-bottom: 2.9rem;
     justify-content: center;
@@ -61,6 +61,10 @@ main p {
 main .card{
     position: relative;
     margin-bottom: 3.2rem;
+}
+
+main .card img{
+    width: 200px;
 }
 
 main h2{
@@ -101,6 +105,10 @@ main h2:hover{
     animation: topdown 1s;
 }
 
+.page header p {
+    display: none;
+}
+
 @keyframes topdown {
     0%  {
         opacity: 0;
@@ -122,5 +130,98 @@ main h2:hover{
     100%{
         opacity: 1;
         transform: rotate(0);
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .page{
+        display: flex;
+
+        grid-template-columns: 377px auto;
+        grid-template-areas: "header main";
+        
+        
+    }
+
+    header{
+        height: 100vh;
+        width: 37.7rem;
+        margin: 0;
+        grid-area: header;
+    }
+
+    .page header p {
+        display: block;
+        font-size: 1.8rem;
+        padding: 40px;
+        line-height: 2.0rem;
+        font-family: 'Roboto';
+        text-align: center;
+        color: white;
+    }
+
+    main{
+        
+        grid-area: main;
+        
+        
+        
+        height: 100%;
+        padding-left: 50px;
+        padding-top: 50px;
+        width: 100%;
+        
+    }
+
+    .cards-pai{
+        display: grid;
+        grid-template-areas: "colunaA colunaB colunaC"
+                             "colunaD colunaB colunaF"
+                             "colunaD colunaE colunaF";
+        gap: 3.2rem;
+        
+        
+        margin: 0;
+        height: 100%;
+        
+        
+    }
+
+    main .card img{
+        width: 250px;
+    }
+    main .card{
+        margin-bottom: initial;
+
+    }
+
+    main div:nth-child(1){
+        grid-area: colunaA;
+    }
+
+    main div:nth-child(2){
+        grid-area: colunaB;
+    }
+
+    main div:nth-child(3){
+        grid-area: colunaC;
+    }
+
+    main div:nth-child(4){
+        grid-area: colunaD;
+    }
+
+    main div:nth-child(5){
+        grid-area: colunaE;
+    }
+
+    main div:nth-child(6){
+        grid-area: colunaF;
+    }
+    
+    
+    .page main p{
+        display: none;
     }
 }
